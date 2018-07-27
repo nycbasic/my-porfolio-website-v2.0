@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "mobile";
 
 * {
   box-sizing: border-box;
@@ -30,9 +31,8 @@ h3 {
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
-    width: 70.5%;
-    text-align: left;
+    background: rgba(lighten($primary-color, 2), 0);
+    width: 100%;
   }
 }
 
@@ -121,6 +121,9 @@ main {
 
     &.show {
       transform: translate3d(0, 0, 0);
+    }
+    p {
+      font-size: 2.2rem;
     }
 
     .portrait {
