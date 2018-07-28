@@ -4,13 +4,13 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
-  transition: all 0.5s ease-out; }
+  transition: all 0.6s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: #fff;
-    transition: all 0.5s ease-out; }
+    transition: all 0.6s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
@@ -82,7 +82,7 @@ main {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #2abfbf;
-        transition: all 0.5s ease-out; }
+        transition: all 0.6s ease-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -111,13 +111,13 @@ main {
     opacity: 0.8;
     list-style: none;
     transform: translate3d(0, -100%, 0);
-    transition: all 0.5s ease-out; }
+    transition: all 0.6s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     background: #000;
     opacity: 1;
-    transition: all 0.5s ease-out;
+    transition: all 0.6s ease-out;
     transform: translate3d(0, 100%, 0); }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
@@ -132,7 +132,7 @@ main {
       border: 6px solid #2abfbf; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
-    transition: all 0.5s ease-out; }
+    transition: all 0.6s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
@@ -146,7 +146,7 @@ main {
     font-weight: 300;
     color: #fff;
     text-decoration: none;
-    transition: all 0.5s ease-out; }
+    transition: all 0.6s ease-out; }
     .menu .nav-link:hover {
       color: #2abfbf; }
 
@@ -193,7 +193,7 @@ main {
     .projects img:hover {
       opacity: 0.5;
       border-color: #2abfbf;
-      transition: all 0.5s ease-out; }
+      transition: all 0.6s ease-out; }
   .projects .item {
     height: 50vh; }
     .projects .item p {
@@ -210,7 +210,7 @@ main {
     border: 3px solid #fff;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
-    transition: all 0.5s ease-out; }
+    transition: all 0.6s ease-out; }
     .boxes div i {
       margin: 0 0.5rem; }
     .boxes div:hover {
@@ -221,12 +221,12 @@ main {
       .boxes div:hover span {
         color: #000; }
 
-.btn, .btn-dark, .btn-light {
+.btn, .btn-dark {
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
+  .btn:hover, .btn-dark:hover {
     background: #2abfbf;
     color: #000; }
 
@@ -237,10 +237,6 @@ main {
   .btn-dark i {
     margin: 0 0.5rem;
     font-size: 1.2rem; }
-
-.btn-light {
-  background: #333333;
-  color: #fff; }
 
 #main-footer {
   text-align: center;

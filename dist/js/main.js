@@ -41,12 +41,12 @@ navLink.forEach(val => {
       val.parentElement.className = "nav-item show";
     });
     val.parentElement.setAttribute("class", "nav-item show current");
-    test.change(val.id, toggleMenu);
+    dynamicContent.change(val.id, toggleMenu());
   };
 });
 
 // Dynamic content
-const test = {
+const dynamicContent = {
   home: {
     content_id: "home",
     html: `<h1 class="lg-heading">
@@ -133,7 +133,7 @@ const test = {
           <a href="https://obscure-cove-76455.herokuapp.com/" target="_blank">
             <img src="img/project/post-it.png" alt="project">
           </a>
-          <h2>Post-It: Mini API Project</h2>
+          <h2 class="text-secondary">Post-It: Mini API Project</h2>
           <p>This was a project was built using Express.js and Node.js. It was a project to get a good foundation of buidling
             an API and understanding how the back-end works.</p>
           <a href="#" class="btn-dark">
@@ -143,7 +143,7 @@ const test = {
           <a href="https://vast-reaches-98077.herokuapp.com/" target="_blank">
             <img src="img/project/simple-counter.png" alt="project">
           </a>
-          <h2>Simple Counter: React Mini-Project</h2>
+          <h2 class="text-secondary">Simple Counter: React Mini-Project</h2>
           <p>This project was built utilizing just React alone. It was a project to get started on learning how to utilize
             states to change the DOM.</p>
           <a href="#" class="btn-dark">
@@ -172,16 +172,17 @@ const test = {
   },
 
   change: function(value, callback) {
+    const { content_id, html } = this[value];
     if (value === "home") {
       body.setAttribute("id", "bg-img");
-      main.setAttribute("id", this.home.content_id);
-      content.innerHTML = this.home.html;
-      return callback();
+      main.setAttribute("id", content_id);
+      content.innerHTML = html;
+      callback;
     } else {
       body.removeAttribute("id");
-      main.setAttribute("id", this[value].content_id);
-      content.innerHTML = this[value].html;
-      return callback();
+      main.setAttribute("id", content_id);
+      content.innerHTML = html;
+      callback;
     }
   }
 };
@@ -190,3 +191,17 @@ const test = {
 /*
 I FRIGGIN HATE THIS PART!! ARGHHH!!!!
 */
+
+window.onload = function() {
+  if (isIE()) {
+    document.getElementById("bg-img").innerHTML =
+      "<h1>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer</h1>";
+  }
+};
+
+function isIE() {
+  ua = navigator.userAgent;
+  /* MSIE used to detect old browsers and Trident used to newer ones*/
+  const is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+  return is_ie;
+}

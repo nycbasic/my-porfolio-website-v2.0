@@ -191,6 +191,7 @@ main {
 // .job-3 {
 //   grid-area: job3;
 // }
+
 // work/projects
 .projects {
   display: grid;
@@ -262,12 +263,6 @@ main {
     margin: 0 0.5rem;
     font-size: 1.2rem;
   }
-}
-
-.btn-light {
-  @extend .btn;
-  background: lighten($primary-color, 20);
-  color: #fff;
 }
 
 #main-footer {
