@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "new personal portfolio website",
   "main": "index.html",
+  "homepage": "https://nycbasic.github.io/portfolio-v2.0",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css --recursive"
+    "sass": "node-sass -w scss/ -o dist/css --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Spoon",
   "license": "MIT",
