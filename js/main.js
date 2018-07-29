@@ -6,7 +6,6 @@ const menuButton = document.querySelector(".menu-btn"),
   navItems = document.querySelectorAll(".nav-item"),
   navLink = document.querySelectorAll(".nav-link"),
   body = document.getElementById("bg-img"),
-  content = document.getElementById("content"),
   main = document.querySelector(".main");
 
 // Set initial state of menu
@@ -172,13 +171,13 @@ const dynamicContent = {
     if (value === "home") {
       body.setAttribute("id", "bg-img");
       main.setAttribute("id", content_id);
-      content.innerHTML = html;
-      callback;
+      main.innerHTML = html;
+      setTimeout(callback, 200);
     } else {
       body.removeAttribute("id");
       main.setAttribute("id", content_id);
-      content.innerHTML = html;
-      callback;
+      main.innerHTML = html;
+      setTimeout(callback, 200);
     }
   }
 };
