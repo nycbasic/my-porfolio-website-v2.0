@@ -260,6 +260,7 @@ main {
     text-align: center; }
     main .lg-heading {
       line-height: 1;
+      font-size: 4rem;
       margin-bottom: 1rem; }
   ul.menu-nav,
   div.menu-branding {
@@ -282,13 +283,22 @@ main {
       background-size: cover;
       width: 150px;
       height: 150px; }
+    div.menu-branding h2 {
+      font-size: 1.2rem; }
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(2, 1fr); }
   .boxes a {
-    font-size: 1rem; } }
+    font-size: 1rem; }
+  .bio-image {
+    grid-area: bioimage;
+    margin: 5% 10%;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border: 6px solid #2abfbf; } }
 
 @media screen and (max-width: 500px) {
   #home h1 {

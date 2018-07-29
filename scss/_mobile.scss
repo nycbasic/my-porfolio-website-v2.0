@@ -19,6 +19,7 @@
     text-align: center;
     .lg-heading {
       line-height: 1;
+      font-size: 4rem;
       margin-bottom: 1rem;
     }
   }
@@ -47,6 +48,9 @@
       width: 150px;
       height: 150px;
     }
+    h2 {
+      font-size: 1.2rem;
+    }
   }
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
@@ -58,6 +62,15 @@
 
   .boxes a {
     font-size: 1rem;
+  }
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: 5% 10%;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border: 6px solid $secondary-color;
   }
 }
 
