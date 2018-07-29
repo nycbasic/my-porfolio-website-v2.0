@@ -190,6 +190,7 @@ I FRIGGIN HATE THIS PART!! ARGHHH!!!!
 
 window.onload = function() {
   if (isIE()) {
+    alert("This is Internet explorer");
     document.getElementById("bg-img").innerHTML =
       "<h1>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer</h1>";
   }
