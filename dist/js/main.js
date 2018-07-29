@@ -36,7 +36,6 @@ function toggleMenu() {
 // Menu click action
 navLink.forEach((val, i) => {
   val.onclick = () => {
-    console.log(val.id, "has been clicked");
     navLink.forEach(val => {
       val.parentElement.className = "nav-item show";
     });
@@ -170,21 +169,18 @@ const dynamicContent = {
   change: function(value, callback) {
     switch (value) {
       case undefined:
-        console.log("change method", value);
         body.setAttribute("id", "bg-img");
         main.setAttribute("id", this.home.content_id);
         main.innerHTML = this.home.html;
         setTimeout(callback, 200);
         break;
       case "home":
-        console.log("change method", value);
         body.setAttribute("id", "bg-img");
         main.setAttribute("id", this[value].content_id);
         main.innerHTML = this[value].html;
         setTimeout(callback, 200);
         break;
       default:
-        console.log("Other than home");
         body.removeAttribute("id");
         main.setAttribute("id", this[value].content_id);
         main.innerHTML = this[value].html;
@@ -200,7 +196,6 @@ I FRIGGIN HATE THIS PART!! ARGHHH!!!!
 
 window.onpopstate = function() {
   let test = location.hash.split("#")[1];
-  console.log("popstate", test);
   browserBehavior(test);
 };
 
