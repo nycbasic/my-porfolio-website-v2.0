@@ -145,6 +145,14 @@ const dynamicContent = {
             states to change the DOM.</p>
         </div>
 
+        <div class="item">
+          <a href="https://secret-cove-36133.herokuapp.com/index.html" target="_blank">
+            <img src="img/project/financial-calculator.png" alt="project">
+          </a>
+          <h2 class="text-secondary">Financial Calculator: Javascript Mini-Project</h2>
+          <p>This project was built utilizing just javascript. My friend was using an excel spreadsheet to have this done, so I thought it would be a good idea to use this opportunity to build a simple app with plain javascript.</p>
+        </div>
+
       </div>`
   },
 
