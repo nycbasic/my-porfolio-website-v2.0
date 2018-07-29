@@ -11,6 +11,14 @@
     margin: 0 0 5px 0;
     background: #fff;
     transition: all 0.6s ease-out; }
+  .menu-btn .btn-lines {
+    float: right;
+    padding: 12px 0;
+    height: 100%; }
+  .menu-btn h2 {
+    float: left;
+    margin-right: 5px;
+    display: block; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
