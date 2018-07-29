@@ -34,8 +34,9 @@ function toggleMenu() {
 }
 
 // Menu click action
-navLink.forEach(val => {
+navLink.forEach((val, i) => {
   val.onclick = () => {
+    console.log(val.id, "has been clicked");
     navLink.forEach(val => {
       val.parentElement.className = "nav-item show";
     });
@@ -161,23 +162,33 @@ const dynamicContent = {
           <span class="text-secondary">
             <i class="fas fa-envelope"></i>
           </span>
-          <a href="mailto:samuel.poon@baruchamail.cuny.edu">samuel.poon@baruchmail.cuny.edu</a>
+          <a href="mailto:samuel.poon@baruchamail.cuny.edu?subject=Nice to meet you!">samuel.poon@baruchmail.cuny.edu</a>
         </div>
       </div>`
   },
 
   change: function(value, callback) {
-    const { content_id, html } = this[value];
-    if (value === "home") {
-      body.setAttribute("id", "bg-img");
-      main.setAttribute("id", content_id);
-      main.innerHTML = html;
-      setTimeout(callback, 200);
-    } else {
-      body.removeAttribute("id");
-      main.setAttribute("id", content_id);
-      main.innerHTML = html;
-      setTimeout(callback, 200);
+    switch (value) {
+      case undefined:
+        console.log("change method", value);
+        body.setAttribute("id", "bg-img");
+        main.setAttribute("id", this.home.content_id);
+        main.innerHTML = this.home.html;
+        setTimeout(callback, 200);
+        break;
+      case "home":
+        console.log("change method", value);
+        body.setAttribute("id", "bg-img");
+        main.setAttribute("id", this[value].content_id);
+        main.innerHTML = this[value].html;
+        setTimeout(callback, 200);
+        break;
+      default:
+        console.log("Other than home");
+        body.removeAttribute("id");
+        main.setAttribute("id", this[value].content_id);
+        main.innerHTML = this[value].html;
+        setTimeout(callback, 200);
     }
   }
 };
@@ -187,6 +198,18 @@ const dynamicContent = {
 I FRIGGIN HATE THIS PART!! ARGHHH!!!!
 */
 
+window.onpopstate = function() {
+  let test = location.hash.split("#")[1];
+  console.log("popstate", test);
+  browserBehavior(test);
+};
+
+function browserBehavior(value) {
+  dynamicContent.change(value, function() {
+    return false;
+  });
+}
+
 window.onload = function() {
   const version = detectIE();
   if (version) {
@@ -194,6 +217,7 @@ window.onload = function() {
     document.getElementById("bg-img").innerHTML =
       "<h1>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer</h1>";
   }
+  browserBehavior(location.hash.split("#")[1]);
 };
 
 function detectIE() {

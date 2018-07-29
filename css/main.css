@@ -215,7 +215,6 @@ main {
     .boxes div i {
       margin: 0 0.5rem; }
     .boxes div:hover {
-      padding: 0.5rem 1.5rem;
       background: #2abfbf;
       color: #000;
       cursor: pointer; }
