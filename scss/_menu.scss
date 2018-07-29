@@ -15,18 +15,6 @@
     @include easeOut;
   }
 
-  .btn-lines {
-    float: right;
-    padding: 12px 0;
-    height: 100%;
-  }
-
-  h2 {
-    float: left;
-    margin-right: 5px;
-    display: block;
-  }
-
   // Rotate int X with Menu Lines
   &.close {
     transform: rotate(180deg);
