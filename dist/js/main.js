@@ -136,8 +136,6 @@ const dynamicContent = {
           <h2 class="text-secondary">Post-It: Mini API Project</h2>
           <p>This was a project was built using Express.js and Node.js. It was a project to get a good foundation of buidling
             an API and understanding how the back-end works.</p>
-          <a href="#" class="btn-dark">
-            <i class="fab fa-github"></i>Github</a>
         </div>
         <div class="item">
           <a href="https://vast-reaches-98077.herokuapp.com/" target="_blank">
@@ -146,8 +144,6 @@ const dynamicContent = {
           <h2 class="text-secondary">Simple Counter: React Mini-Project</h2>
           <p>This project was built utilizing just React alone. It was a project to get started on learning how to utilize
             states to change the DOM.</p>
-          <a href="#" class="btn-dark">
-            <i class="fab fa-github"></i>Github</a>
         </div>
 
       </div>`

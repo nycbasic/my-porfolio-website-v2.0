@@ -185,11 +185,12 @@ main {
 
 .projects {
   display: grid;
-  grid-gap: 0.7rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(3, 1fr); }
   .projects img {
     width: 100%;
-    border: 3px solid #fff; }
+    border: 1px solid #fff;
+    border-radius: 10px; }
     .projects img:hover {
       opacity: 0.5;
       border-color: #2abfbf;
