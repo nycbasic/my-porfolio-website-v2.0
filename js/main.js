@@ -188,16 +188,9 @@ I FRIGGIN HATE THIS PART!! ARGHHH!!!!
 */
 
 window.onload = function() {
-  if (isIE()) {
-    alert("This is Internet explorer");
+  if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+    alert("Hello Microsoft User!");
     document.getElementById("bg-img").innerHTML =
       "<h1>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer</h1>";
   }
 };
-
-function isIE() {
-  ua = navigator.userAgent;
-  /* MSIE used to detect old browsers and Trident used to newer ones*/
-  const is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-  return is_ie;
-}
