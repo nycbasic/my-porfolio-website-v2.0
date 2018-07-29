@@ -40,7 +40,7 @@ navLink.forEach(val => {
     navLink.forEach(val => {
       val.parentElement.className = "nav-item show";
     });
-    val.parentElement.setAttribute("class", "nav-item show current");
+    val.parentElement.className = "nav-item show current";
     dynamicContent.change(val.id, toggleMenu());
   };
 });
