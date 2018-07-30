@@ -9,7 +9,7 @@ const menuButton = document.querySelector(".menu-btn"),
   main = document.querySelector(".main");
 
 // Set initial state of menu
-menuButton.addEventListener("click", toggleMenu);
+menuButton.addEventListener("click", () => toggleMenu.change());
 
 // Menu click action
 navLink.forEach((val, i) => {
@@ -18,11 +18,11 @@ navLink.forEach((val, i) => {
       val.parentElement.className = "nav-item show";
     });
     val.parentElement.className = "nav-item show current";
-    dynamicContent.change(val.id, toggleMenu());
+    dynamicContent.change(val.id, toggleMenu.change());
   };
 });
 
-// Dynamic content object
+// Dynamic Content Object
 const dynamicContent = {
   home: {
     content_id: "home",
@@ -167,6 +167,32 @@ const dynamicContent = {
   }
 };
 
+// Toggle Menu Object
+const toggleMenu = {
+  boolean: false,
+  change: function () {
+    if (!this.boolean) {
+      menuButton.classList.add("close");
+      menu.classList.add("show");
+      menuNav.classList.add("show");
+      menuBranding.classList.add("show");
+      setTimeout(() => navItems.forEach(item => item.classList.add("show")), 450);
+
+      this.boolean = true;
+    } else {
+      setTimeout(() => {
+        menuButton.classList.remove("close");
+        menu.classList.remove("show");
+        menuNav.classList.remove("show");
+        menuBranding.classList.remove("show");
+        navItems.forEach(item => item.classList.remove("show"));
+
+        this.boolean = false;
+      }, 200);
+    }
+  }
+}
+
 // Browser behavior
 window.onload = function () {
   const version = detectIE();
@@ -176,45 +202,21 @@ window.onload = function () {
     document.getElementById("bg-img").innerHTML =
       "<h1>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer</h1>";
   }
-  browserBehavior(hash);
+  browserBehavior(hash, () => false);
 };
 
 window.onpopstate = function () {
   let hash = location.hash.split("#")[1];
-  browserBehavior(hash);
+  browserBehavior(hash, () => false);
 };
 
 
 // functions
-let showMenu = false;
-
-function toggleMenu() {
-  if (!showMenu) {
-    menuButton.classList.add("close");
-    menu.classList.add("show");
-    menuNav.classList.add("show");
-    menuBranding.classList.add("show");
-    setTimeout(() => navItems.forEach(item => item.classList.add("show")), 450);
-
-    showMenu = true;
-  } else {
-    setTimeout(() => {
-      menuButton.classList.remove("close");
-      menu.classList.remove("show");
-      menuNav.classList.remove("show");
-      menuBranding.classList.remove("show");
-      navItems.forEach(item => item.classList.remove("show"));
-
-      showMenu = false;
-    }, 200);
-  }
-}
-
-function browserBehavior(value) {
+function browserBehavior(value, callback) {
   if (value === undefined) {
-    dynamicContent.change('home');
+    dynamicContent.change('home', callback);
   } else {
-    dynamicContent.change(value);
+    dynamicContent.change(value, callback);
   }
 }
 
