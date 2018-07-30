@@ -29,17 +29,17 @@ const dynamicContent = {
     html: `<h1 class="lg-heading">
         Sam
         <span class="text-secondary">Poon</span>
-      </h1>
-      <h2 class="sm-heading">
-        Jr. Full Stack Web Developer & eLearning Developer
-      </h2>
-      <div class="icons">
-        <a href="https://www.linkedin.com/in/sam-p-3642a627" target="_blank">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://github.com/nycbasic" target="_blank">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
+        </h1>
+        <h2 class="sm-heading">
+          Jr. Full Stack Web Developer & eLearning Developer
+        </h2>
+        <div class="icons">
+          <a href="https://www.linkedin.com/in/sam-p-3642a627" target="_blank">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="https://github.com/nycbasic" target="_blank">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
         </div>`
   },
   about: {
@@ -147,7 +147,7 @@ const dynamicContent = {
           <span class="text-secondary">
             <i class="fas fa-envelope"></i>
           </span>
-          <a href="mailto:samuel.poon@baruchamail.cuny.edu?subject=Nice to meet you!">samuel.poon@baruchmail.cuny.edu</a>
+          <a href="mailto:samuel.poon@baruchmail.cuny.edu?subject=Nice to meet you!">samuel.poon@baruchmail.cuny.edu</a>
         </div>
       </div>`
   },
@@ -194,7 +194,7 @@ function toggleMenu() {
     menu.classList.add("show");
     menuNav.classList.add("show");
     menuBranding.classList.add("show");
-    navItems.forEach(item => item.classList.add("show"));
+    setTimeout(() => navItems.forEach(item => item.classList.add("show")), 450);
 
     showMenu = true;
   } else {
