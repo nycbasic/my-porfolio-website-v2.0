@@ -9,31 +9,7 @@ const menuButton = document.querySelector(".menu-btn"),
   main = document.querySelector(".main");
 
 // Set initial state of menu
-let showMenu = false;
-
 menuButton.addEventListener("click", toggleMenu);
-
-function toggleMenu() {
-  if (!showMenu) {
-    menuButton.classList.add("close");
-    menu.classList.add("show");
-    menuNav.classList.add("show");
-    menuBranding.classList.add("show");
-    navItems.forEach(item => item.classList.add("show"));
-
-    showMenu = true;
-  } else {
-    setTimeout(() => {
-      menuButton.classList.remove("close");
-      menu.classList.remove("show");
-      menuNav.classList.remove("show");
-      menuBranding.classList.remove("show");
-      navItems.forEach(item => item.classList.remove("show"));
-
-      showMenu = false;
-    }, 200);
-  }
-}
 
 // Menu click action
 navLink.forEach((val, i) => {
@@ -46,7 +22,7 @@ navLink.forEach((val, i) => {
   };
 });
 
-// Dynamic content
+// Dynamic content object
 const dynamicContent = {
   home: {
     content_id: "home",
@@ -192,13 +168,9 @@ const dynamicContent = {
 };
 
 // Browser behavior
-/*
-I FRIGGIN HATE THIS PART!! ARGHHH!!!!
-*/
-
 window.onload = function () {
   const version = detectIE();
-  const hash = location.hash.split("#")[1];
+  let hash = location.hash.split("#")[1];
   if (version) {
     alert("Hello Microsoft User!");
     document.getElementById("bg-img").innerHTML =
@@ -211,6 +183,32 @@ window.onpopstate = function () {
   let hash = location.hash.split("#")[1];
   browserBehavior(hash);
 };
+
+
+// functions
+let showMenu = false;
+
+function toggleMenu() {
+  if (!showMenu) {
+    menuButton.classList.add("close");
+    menu.classList.add("show");
+    menuNav.classList.add("show");
+    menuBranding.classList.add("show");
+    navItems.forEach(item => item.classList.add("show"));
+
+    showMenu = true;
+  } else {
+    setTimeout(() => {
+      menuButton.classList.remove("close");
+      menu.classList.remove("show");
+      menuNav.classList.remove("show");
+      menuBranding.classList.remove("show");
+      navItems.forEach(item => item.classList.remove("show"));
+
+      showMenu = false;
+    }, 200);
+  }
+}
 
 function browserBehavior(value) {
   if (value === undefined) {
