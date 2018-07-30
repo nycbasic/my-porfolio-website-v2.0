@@ -134,9 +134,9 @@ const dynamicContent = {
           <a href="https://obscure-cove-76455.herokuapp.com/" target="_blank">
             <img src="img/project/post-it.png" alt="project">
           </a>
-          <h2 class="text-secondary">Post-It: Mini API Project</h2>
+          <h2 class="text-secondary">Post-It: Mini Node.js/Express.js API Project</h2>
           <p>This was a project was built using Express.js and Node.js. It was a project to get a good foundation of buidling
-            an API and understanding how the back-end works.</p>
+            an API and understanding how the back-end works. The front end code used was jQuery.</p>
         </div>
         <div class="item">
           <a href="https://vast-reaches-98077.herokuapp.com/" target="_blank">
