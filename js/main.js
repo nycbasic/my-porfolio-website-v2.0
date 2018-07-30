@@ -23,13 +23,15 @@ function toggleMenu() {
 
     showMenu = true;
   } else {
-    menuButton.classList.remove("close");
-    menu.classList.remove("show");
-    menuNav.classList.remove("show");
-    menuBranding.classList.remove("show");
-    navItems.forEach(item => item.classList.remove("show"));
+    setTimeout(() => {
+      menuButton.classList.remove("close");
+      menu.classList.remove("show");
+      menuNav.classList.remove("show");
+      menuBranding.classList.remove("show");
+      navItems.forEach(item => item.classList.remove("show"));
 
-    showMenu = false;
+      showMenu = false;
+    }, 200);
   }
 }
 
@@ -174,25 +176,17 @@ const dynamicContent = {
       </div>`
   },
 
-  change: function(value, callback) {
-    switch (value) {
-      case undefined:
-        body.setAttribute("id", "bg-img");
-        main.setAttribute("id", this.home.content_id);
-        main.innerHTML = this.home.html;
-        setTimeout(callback, 200);
-        break;
-      case "home":
-        body.setAttribute("id", "bg-img");
-        main.setAttribute("id", this[value].content_id);
-        main.innerHTML = this[value].html;
-        setTimeout(callback, 200);
-        break;
-      default:
-        body.removeAttribute("id");
-        main.setAttribute("id", this[value].content_id);
-        main.innerHTML = this[value].html;
-        setTimeout(callback, 200);
+  change: function (value, callback) {
+    if (value === 'home') {
+      body.setAttribute("id", "bg-img");
+      main.setAttribute("id", this.home.content_id);
+      main.innerHTML = this.home.html;
+      callback;
+    } else {
+      body.removeAttribute("id");
+      main.setAttribute("id", this[value].content_id);
+      main.innerHTML = this[value].html;
+      callback;
     }
   }
 };
@@ -202,26 +196,29 @@ const dynamicContent = {
 I FRIGGIN HATE THIS PART!! ARGHHH!!!!
 */
 
-window.onpopstate = function() {
-  let test = location.hash.split("#")[1];
-  browserBehavior(test);
-};
-
-function browserBehavior(value) {
-  dynamicContent.change(value, function() {
-    return false;
-  });
-}
-
-window.onload = function() {
+window.onload = function () {
   const version = detectIE();
+  const hash = location.hash.split("#")[1];
   if (version) {
     alert("Hello Microsoft User!");
     document.getElementById("bg-img").innerHTML =
       "<h1>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer</h1>";
   }
-  browserBehavior(location.hash.split("#")[1]);
+  browserBehavior(hash);
 };
+
+window.onpopstate = function () {
+  let hash = location.hash.split("#")[1];
+  browserBehavior(hash);
+};
+
+function browserBehavior(value) {
+  if (value === undefined) {
+    dynamicContent.change('home');
+  } else {
+    dynamicContent.change(value);
+  }
+}
 
 function detectIE() {
   var ua = window.navigator.userAgent;
