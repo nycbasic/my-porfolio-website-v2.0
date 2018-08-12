@@ -212,8 +212,9 @@ window.onload = function() {
   if (getIEVersion() > 0) {
     body.innerHTML =
       '<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
+  } else {
+    browserBehavior(hash, () => false);
   }
-  browserBehavior(hash, () => false);
 };
 
 window.onpopstate = function() {
