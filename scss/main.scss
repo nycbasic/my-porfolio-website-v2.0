@@ -43,6 +43,15 @@ header {
   width: 100%;
 }
 
+.container {
+  width: 50%;
+  border: 1px solid #fff;
+  padding: 50px;
+  border-radius: 10px;
+  margin: 20% auto;
+  text-align: center;
+}
+
 .text-secondary {
   color: $secondary-color;
 }
@@ -149,7 +158,7 @@ main {
 // Delay each nav item slide by 0.1s
 @for $x from 1 through 4 {
   .nav-item:nth-child(#{$x}) {
-    transition-delay: $x * 0.1s;
+    transition-delay: $x * 0.2s;
   }
 }
 
@@ -191,7 +200,6 @@ main {
 // .job-3 {
 //   grid-area: job3;
 // }
-
 // work/projects
 .projects {
   display: grid;

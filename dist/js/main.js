@@ -114,6 +114,15 @@ const dynamicContent = {
           <p>This was a project was built using Express.js and Node.js. It was a project to get a good foundation of buidling
             an API and understanding how the back-end works. The front end code used was jQuery.</p>
         </div>
+
+        <div class="item">
+          <a href="https://secret-cove-36133.herokuapp.com/index.html" target="_blank">
+            <img src="img/project/financial-calculator.png" alt="project">
+          </a>
+          <h2 class="text-secondary">Financial Calculator: Javascript Mini-Project</h2>
+          <p>This project was built utilizing just javascript. My friend was using an excel spreadsheet to have this done, so I thought it would be a good idea to use this opportunity to build a simple app with plain javascript.</p>
+        </div>
+
         <div class="item">
           <a href="https://vast-reaches-98077.herokuapp.com/" target="_blank">
             <img src="img/project/simple-counter.png" alt="project">
@@ -124,11 +133,11 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://secret-cove-36133.herokuapp.com/index.html" target="_blank">
-            <img src="img/project/financial-calculator.png" alt="project">
+          <a href="https://nycbasic.github.io/react-todo-app/" target="_blank">
+            <img src="img/project/to-do.png" alt="project">
           </a>
-          <h2 class="text-secondary">Financial Calculator: Javascript Mini-Project</h2>
-          <p>This project was built utilizing just javascript. My friend was using an excel spreadsheet to have this done, so I thought it would be a good idea to use this opportunity to build a simple app with plain javascript.</p>
+          <h2 class="text-secondary">To-do List: React Mini-Project</h2>
+          <p>This project was built using React alone. This project was made to get a better understand on using a parent component to pass state and functions via props.</p>
         </div>
 
       </div>`
@@ -152,8 +161,8 @@ const dynamicContent = {
       </div>`
   },
 
-  change: function (value, callback) {
-    if (value === 'home') {
+  change: function(value, callback) {
+    if (value === "home") {
       body.setAttribute("id", "bg-img");
       main.setAttribute("id", this.home.content_id);
       main.innerHTML = this.home.html;
@@ -170,13 +179,17 @@ const dynamicContent = {
 // Toggle Menu Object
 const toggleMenu = {
   boolean: false,
-  change: function () {
+  change: function() {
     if (!this.boolean) {
       menuButton.classList.add("close");
       menu.classList.add("show");
       menuNav.classList.add("show");
       menuBranding.classList.add("show");
-      setTimeout(() => navItems.forEach(item => item.classList.add("show")), 450);
+      setTimeout(() => {
+        navItems.forEach(item => {
+          item.classList.add("show");
+        });
+      }, 450);
 
       this.boolean = true;
     } else {
@@ -191,71 +204,46 @@ const toggleMenu = {
       }, 200);
     }
   }
-}
+};
 
 // Browser behavior
-window.onload = function () {
+window.onload = function() {
   const version = detectIE();
   let hash = location.hash.split("#")[1];
-  if (version) {
-    alert("Hello Microsoft User!");
-    document.getElementById("bg-img").innerHTML =
-      "<h1>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer</h1>";
+  if (getIEVersion() > 0) {
+    body.innerHTML =
+      '<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
   }
   browserBehavior(hash, () => false);
 };
 
-window.onpopstate = function () {
+window.onpopstate = function() {
   let hash = location.hash.split("#")[1];
   browserBehavior(hash, () => false);
 };
 
-
 // functions
 function browserBehavior(value, callback) {
   if (value === undefined) {
-    dynamicContent.change('home', callback);
+    dynamicContent.change("home", callback);
   } else {
     dynamicContent.change(value, callback);
   }
 }
 
-function detectIE() {
-  var ua = window.navigator.userAgent;
+// Checking IE Version and browser
+function getIEVersion() {
+  const sAgent = window.navigator.userAgent;
+  const Idx = sAgent.indexOf("MSIE");
 
-  // Test values; Uncomment to check result …
-
-  // IE 10
-  // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
-
-  // IE 11
-  // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
-
-  // Edge 12 (Spartan)
-  // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
-
-  // Edge 13
-  // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
-
-  var msie = ua.indexOf("MSIE ");
-  if (msie > 0) {
-    // IE 10 or older => return version number
-    return parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)), 10);
+  // If IE, return version number.
+  if (Idx > 0) {
+    return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf(".", Idx)));
   }
-
-  var trident = ua.indexOf("Trident/");
-  if (trident > 0) {
-    // IE 11 => return version number
-    var rv = ua.indexOf("rv:");
-    return parseInt(ua.substring(rv + 3, ua.indexOf(".", rv)), 10);
+  // If IE 11 then look for Updated user agent string.
+  else if (!!navigator.userAgent.match(/Trident\/7\./)) {
+    return 11;
+  } else {
+    return false; //It is not IE
   }
-
-  var edge = ua.indexOf("Edge/");
-  if (edge > 0) {
-    // Edge (IE 12+) => return version number
-    return parseInt(ua.substring(edge + 5, ua.indexOf(".", edge)), 10);
-  }
-
-  // other browser
-  return false;
 }

@@ -70,6 +70,14 @@ header {
   z-index: 2;
   width: 100%; }
 
+.container {
+  width: 50%;
+  border: 1px solid #fff;
+  padding: 50px;
+  border-radius: 10px;
+  margin: 20% auto;
+  text-align: center; }
+
 .text-secondary {
   color: #2abfbf; }
 
@@ -151,16 +159,16 @@ main {
       color: #2abfbf; }
 
 .nav-item:nth-child(1) {
-  transition-delay: 0.1s; }
-
-.nav-item:nth-child(2) {
   transition-delay: 0.2s; }
 
+.nav-item:nth-child(2) {
+  transition-delay: 0.4s; }
+
 .nav-item:nth-child(3) {
-  transition-delay: 0.3s; }
+  transition-delay: 0.6s; }
 
 .nav-item:nth-child(4) {
-  transition-delay: 0.4s; }
+  transition-delay: 0.8s; }
 
 .about-info {
   display: grid;
