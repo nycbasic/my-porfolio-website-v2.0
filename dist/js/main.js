@@ -208,7 +208,6 @@ const toggleMenu = {
 
 // Browser behavior
 window.onload = function() {
-  const version = detectIE();
   let hash = location.hash.split("#")[1];
   if (getIEVersion() > 0) {
     body.innerHTML =
