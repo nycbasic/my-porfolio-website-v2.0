@@ -8,11 +8,27 @@ const menuButton = document.querySelector(".menu-btn"),
   body = document.getElementById("bg-img"),
   main = document.querySelector(".main");
 
+// Browser behavior
+window.onload = function() {
+  let hash = location.hash.split("#")[1];
+  if (getIEVersion() > 0) {
+    body.innerHTML =
+      '<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
+  } else {
+    browserBehavior(hash, () => false);
+  }
+};
+
+window.onpopstate = function() {
+  let hash = location.hash.split("#")[1];
+  browserBehavior(hash, () => false);
+};
+
 // Set initial state of menu
 menuButton.addEventListener("click", () => toggleMenu.change());
 
 // Menu click action
-navLink.forEach((val, i) => {
+navLink.forEach(val => {
   val.onclick = () => {
     navLink.forEach(val => {
       val.parentElement.className = "nav-item show";
@@ -162,15 +178,16 @@ const dynamicContent = {
   },
 
   change: function(value, callback) {
+    const { content_id, html } = this[value];
     if (value === "home") {
       body.setAttribute("id", "bg-img");
-      main.setAttribute("id", this.home.content_id);
-      main.innerHTML = this.home.html;
+      main.setAttribute("id", content_id);
+      main.innerHTML = html;
       callback;
     } else {
       body.removeAttribute("id");
-      main.setAttribute("id", this[value].content_id);
-      main.innerHTML = this[value].html;
+      main.setAttribute("id", content_id);
+      main.innerHTML = html;
       callback;
     }
   }
@@ -206,23 +223,8 @@ const toggleMenu = {
   }
 };
 
-// Browser behavior
-window.onload = function() {
-  let hash = location.hash.split("#")[1];
-  if (getIEVersion() > 0) {
-    body.innerHTML =
-      '<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
-  } else {
-    browserBehavior(hash, () => false);
-  }
-};
-
-window.onpopstate = function() {
-  let hash = location.hash.split("#")[1];
-  browserBehavior(hash, () => false);
-};
-
 // functions
+
 function browserBehavior(value, callback) {
   if (value === undefined) {
     dynamicContent.change("home", callback);
