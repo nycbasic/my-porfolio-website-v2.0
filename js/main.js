@@ -9,34 +9,35 @@ const menuButton = document.querySelector(".menu-btn"),
   main = document.querySelector(".main");
 
 // Browser behavior
-window.onload = function() {
+window.onload = function () {
   let hash = location.hash.split("#")[1];
   if (getIEVersion() > 0) {
     body.innerHTML =
       '<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
   } else {
     browserBehavior(hash, () => false);
+
+    window.onpopstate = function () {
+      let hash = location.hash.split("#")[1];
+      browserBehavior(hash, () => false);
+    };
+
+    // Set initial state of menu
+    menuButton.addEventListener("click", () => toggleMenu.change());
+
+    // Menu click action
+    navLink.forEach(val => {
+      val.onclick = () => {
+        navLink.forEach(val => {
+          val.parentElement.className = "nav-item show";
+        });
+        val.parentElement.className = "nav-item show current";
+        dynamicContent.change(val.id, toggleMenu.change());
+      };
+    });
   }
 };
 
-window.onpopstate = function() {
-  let hash = location.hash.split("#")[1];
-  browserBehavior(hash, () => false);
-};
-
-// Set initial state of menu
-menuButton.addEventListener("click", () => toggleMenu.change());
-
-// Menu click action
-navLink.forEach(val => {
-  val.onclick = () => {
-    navLink.forEach(val => {
-      val.parentElement.className = "nav-item show";
-    });
-    val.parentElement.className = "nav-item show current";
-    dynamicContent.change(val.id, toggleMenu.change());
-  };
-});
 
 // Dynamic Content Object
 const dynamicContent = {
@@ -177,7 +178,7 @@ const dynamicContent = {
       </div>`
   },
 
-  change: function(value, callback) {
+  change: function (value, callback) {
     const { content_id, html } = this[value];
     if (value === "home") {
       body.setAttribute("id", "bg-img");
@@ -196,7 +197,7 @@ const dynamicContent = {
 // Toggle Menu Object
 const toggleMenu = {
   boolean: false,
-  change: function() {
+  change: function () {
     if (!this.boolean) {
       menuButton.classList.add("close");
       menu.classList.add("show");
