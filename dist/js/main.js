@@ -9,7 +9,7 @@ const menuButton = document.querySelector(".menu-btn"),
   main = document.querySelector(".main");
 
 // Browser behavior
-window.onload = function () {
+window.onload = function() {
   let hash = location.hash.split("#")[1];
   if (getIEVersion() > 0) {
     body.innerHTML =
@@ -17,7 +17,7 @@ window.onload = function () {
   } else {
     browserBehavior(hash, () => false);
 
-    window.onpopstate = function () {
+    window.onpopstate = function() {
       let hash = location.hash.split("#")[1];
       browserBehavior(hash, () => false);
     };
@@ -37,7 +37,6 @@ window.onload = function () {
     });
   }
 };
-
 
 // Dynamic Content Object
 const dynamicContent = {
@@ -157,6 +156,22 @@ const dynamicContent = {
           <p>This project was built using React alone. This project was made to get a better understand on using a parent component to pass state and functions via props.</p>
         </div>
 
+        <div class="item">
+          <a href="https://boiling-plains-18857.herokuapp.com/" target="_blank">
+            <img src="img/project/yelp-camp.png" alt="project">
+          </a>
+          <h2 class="text-secondary">Yelp Camp: Full Express.js/Node.js Project</h2>
+          <p>This project was built following a tutorial using Express.js, Node.js and passport.js for authentication. This app helped build a solid understanding on how the front-end and back-end communicates and all the moving parts involved with routing.</p>
+        </div>
+
+        <div class="item">
+          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">
+            <img src="img/project/auth.png" alt="project">
+          </a>
+          <h2 class="text-secondary">Auth Connector: Full Stack Mini App with MERN</h2>
+          <p>This project was built using the MERN stack, and helped build a solid foundation for authentication and connecting the back-end with a front end framework. This project also helped template the authentication process to be used in future apps.</p>
+        </div>
+
       </div>`
   },
 
@@ -178,7 +193,7 @@ const dynamicContent = {
       </div>`
   },
 
-  change: function (value, callback) {
+  change: function(value, callback) {
     const { content_id, html } = this[value];
     if (value === "home") {
       body.setAttribute("id", "bg-img");
@@ -197,7 +212,7 @@ const dynamicContent = {
 // Toggle Menu Object
 const toggleMenu = {
   boolean: false,
-  change: function () {
+  change: function() {
     if (!this.boolean) {
       menuButton.classList.add("close");
       menu.classList.add("show");
