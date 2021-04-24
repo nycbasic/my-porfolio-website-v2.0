@@ -8,8 +8,34 @@ const menuButton = document.querySelector(".menu-btn"),
   body = document.getElementById("bg-img"),
   main = document.querySelector(".main");
 
+// functions
+function browserBehavior(value, callback) {
+  if (value === undefined) {
+    dynamicContent.change("home", callback);
+  } else {
+    dynamicContent.change(value, callback);
+  }
+}
+
+// Checking IE Version and browser
+function getIEVersion() {
+  const sAgent = window.navigator.userAgent;
+  const Idx = sAgent.indexOf("MSIE");
+
+  // If IE, return version number.
+  if (Idx > 0) {
+    return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf(".", Idx)));
+  }
+  // If IE 11 then look for Updated user agent string.
+  else if (!!navigator.userAgent.match(/Trident\/7\./)) {
+    return 11;
+  } else {
+    return false; //It is not IE
+  }
+}
+
 // Browser behavior
-window.onload = function() {
+window.onload = function () {
   let hash = location.hash.split("#")[1];
   if (getIEVersion() > 0) {
     body.innerHTML =
@@ -17,7 +43,7 @@ window.onload = function() {
   } else {
     browserBehavior(hash, () => false);
 
-    window.onpopstate = function() {
+    window.onpopstate = function () {
       let hash = location.hash.split("#")[1];
       browserBehavior(hash, () => false);
     };
@@ -26,9 +52,9 @@ window.onload = function() {
     menuButton.addEventListener("click", () => toggleMenu.change());
 
     // Menu click action
-    navLink.forEach(val => {
+    navLink.forEach((val) => {
       val.onclick = () => {
-        navLink.forEach(val => {
+        navLink.forEach((val) => {
           val.parentElement.className = "nav-item show";
         });
         val.parentElement.className = "nav-item show current";
@@ -47,7 +73,7 @@ const dynamicContent = {
         <span class="text-secondary">Poon</span>
         </h1>
         <h2 class="sm-heading">
-          Jr. Full Stack Web Developer & eLearning Developer
+          Full Stack Web Developer
         </h2>
         <div class="icons">
           <a href="https://www.linkedin.com/in/sam-p-3642a627" target="_blank">
@@ -56,60 +82,26 @@ const dynamicContent = {
           <a href="https://github.com/nycbasic" target="_blank">
             <i class="fab fa-github fa-2x"></i>
           </a>
-        </div>`
+        </div>`,
   },
   about: {
     content_id: "about",
     html: `<h1 class="lg-heading">
         About <span class="text-secondary">Me</span>
-      </h1>
-      <h2 class="sm-heading">
-        Let me introduce myself....
-      </h2>
+      </h1> 
       <div class="about-info">
         <div class="bio-image"></div>
           <div class="bio">
-            <h1 class="text-secondary">ASPIRING SOFTWARE DEVELOPER IN THE MAKING...</h1>
-            <h3>So...what's my story?</h3>
-            <p>Hi, I'm Sam!</p>
-            <p>I’m a New York native who has lived in NYC all my life. I cannot see myself anywhere else but the greatest
-            city in the world! You know what they say, once you live somewhere long enough it becomes you!</p>
-            <p>I’ve always had a passion for technology and found my love for coding during my high school years. I loved
-            it so much that I would play hooky from school just so that I could stay home and build programs using
-            Visual Basic and C++.</p>
-            <p>Eventually all those days and nights coding came to an end. I wanted a life as a regular teen to just hang
-            with friends and meet people. So, I did the unthinkable and broke up with the world of coding and technology.</p>
-            <p>After exploring many different career paths I was not passionate about, I realized I never should've hung
-            up my coding shoes. There was always a place in my heart for technology and coding. I never should’ve
-            left in the first place.</p>
-            <p>Fast forward to today, I am currently a Junior Full Stack Developer and aspiring to make it as a Software
-            Developer.</p>
-            <h4>My current stack:</h4>
-            <ul>
-              <li>Front End:
-                <ul>
-                  <li>HTML/CSS</li>
-                  <li>jQuery</li>
-                  <li>React/Redux</li>
-                </ul>
-              </li>
-              <li>Back-End:
-                <ul>
-                  <li>Node.js</li>
-                  <li>Express.js</li>
-                </ul>
-              </li>
-              <li>Databases:</li>
-              <ul>
-                <li>MongoDB</li>
-              </ul>
-            </ul>
-            <p>It was a long journey coming back to coding/programming and I now cannot see myself doing anything else in
-            the world but this for the rest of my life. Ok maybe I'm over exaggerating, but I really can see myself
-            doing this until I'm old and wrinkly.</p>
-            <br />
+            <h1 class="text-secondary">So, what's my story?</h1>
+            <p>I currently work as a eLearning & web developer for mid-size financial tech company and aspiring to make a career switch to sofware engineering.</p>
+            <p>In my current role, I was lucky enough to incorporate my love for coding and provide a value add to my team and the company. I was able to create, build and manage a web application from start to finish. I helped improve the user experience for the companies e-learning environment, while updating and creating new features along the way using the front-end library React.</p> 
+            
+            <p>I'm also working on a project with a non-profit organization to help create a social network that allows them to manage their tournament registstration process, tournament results, and scoring using React/Redux, Node.js, Redis and SQL for the database.</p>
+            
+            <p>I'm very passionate about helping businesses solve problems and creating innovative product solutions with tech and eager to immerse myself in the field of software engineering. </p>
+           
         </div>
-      </div>`
+      </div>`,
   },
 
   portfolio: {
@@ -172,7 +164,15 @@ const dynamicContent = {
           <p>This project was built using the MERN stack, and helped build a solid foundation for authentication and connecting the back-end with a front end framework. This project also helped template the authentication process to be used in future apps.</p>
         </div>
 
-      </div>`
+        <div class="item">
+          <a href="" target="_blank">
+            <img src="img/project/project-management.png" alt="project">
+          </a>
+          <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
+          <p>This project was built using the MERN stack using the previous auth connector application for authentication and building out an API for the other needed data to persist.</p>
+        </div>
+
+      </div>`,
   },
 
   contact: {
@@ -190,10 +190,10 @@ const dynamicContent = {
           </span>
           <a href="mailto:samuel.poon@baruchmail.cuny.edu?subject=Nice to meet you!">samuel.poon@baruchmail.cuny.edu</a>
         </div>
-      </div>`
+      </div>`,
   },
 
-  change: function(value, callback) {
+  change: function (value, callback) {
     const { content_id, html } = this[value];
     if (value === "home") {
       body.setAttribute("id", "bg-img");
@@ -206,20 +206,20 @@ const dynamicContent = {
       main.innerHTML = html;
       callback;
     }
-  }
+  },
 };
 
 // Toggle Menu Object
 const toggleMenu = {
   boolean: false,
-  change: function() {
+  change: function () {
     if (!this.boolean) {
       menuButton.classList.add("close");
       menu.classList.add("show");
       menuNav.classList.add("show");
       menuBranding.classList.add("show");
       setTimeout(() => {
-        navItems.forEach(item => {
+        navItems.forEach((item) => {
           item.classList.add("show");
         });
       }, 450);
@@ -231,37 +231,31 @@ const toggleMenu = {
         menu.classList.remove("show");
         menuNav.classList.remove("show");
         menuBranding.classList.remove("show");
-        navItems.forEach(item => item.classList.remove("show"));
+        navItems.forEach((item) => item.classList.remove("show"));
 
         this.boolean = false;
       }, 200);
     }
-  }
+  },
 };
 
-// functions
-
-function browserBehavior(value, callback) {
-  if (value === undefined) {
-    dynamicContent.change("home", callback);
-  } else {
-    dynamicContent.change(value, callback);
-  }
-}
-
-// Checking IE Version and browser
-function getIEVersion() {
-  const sAgent = window.navigator.userAgent;
-  const Idx = sAgent.indexOf("MSIE");
-
-  // If IE, return version number.
-  if (Idx > 0) {
-    return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf(".", Idx)));
-  }
-  // If IE 11 then look for Updated user agent string.
-  else if (!!navigator.userAgent.match(/Trident\/7\./)) {
-    return 11;
-  } else {
-    return false; //It is not IE
-  }
-}
+//<h4>My current stack:</h4>
+// <ul>
+//   <li>Front End:
+//     <ul>
+//       <li>HTML/CSS</li>
+//       <li>jQuery</li>
+//       <li>React/Redux</li>
+//     </ul>
+//   </li>
+//   <li>Back-End:
+//     <ul>
+//       <li>Node.js</li>
+//       <li>Express.js</li>
+//     </ul>
+//   </li>
+//   <li>Databases:</li>
+//   <ul>
+//     <li>MongoDB</li>
+//   </ul>
+// </ul>
