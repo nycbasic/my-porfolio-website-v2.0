@@ -94,11 +94,11 @@ const dynamicContent = {
           <div class="bio">
             <h1 class="text-secondary">So, what's my story?</h1>
             <p>I currently work as a eLearning & web developer for mid-size financial tech company and aspiring to make a career switch to sofware engineering.</p>
-            <p>In my current role, I was lucky enough to incorporate my love for coding and provide a value add to my team and the company. I was able to create, build and manage a web application from start to finish. I helped improve the user experience for the companies e-learning environment, while updating and creating new features along the way using the front-end library React.</p> 
+            <p>In my current role, I was lucky enough to incorporate my love for coding and provide a value add to my team and the company. I was able to create, build and manage a web application from start to finish. I helped improve the user experience for the company's e-learning environment, while updating and creating new features along the way using the front-end library React.</p> 
             
             <p>I'm also working on a project with a non-profit organization to help create a social network that allows them to manage their tournament registstration process, tournament results, and scoring using React/Redux, Node.js, Redis and SQL for the database.</p>
             
-            <p>I'm very passionate about helping businesses solve problems and creating innovative product solutions with tech and eager to immerse myself in the field of software engineering. </p>
+            <p>I'm very passionate helping businesses solve problems and creating innovative product solutions with tech. I'm looking for an opportunity to immerse myself in the field of software engineering. </p>
            
         </div>
       </div>`,
@@ -165,11 +165,11 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="" target="_blank">
+          <a href="" target="_blank">ß
             <img src="img/project/project-management.png" alt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
-          <p>This project was built using the MERN stack using the previous auth connector application for authentication and building out an API for the other needed data to persist.</p>
+          <p>This project was built using the MERN stack. I used my previous project auth connector for authentication and built an API to support the data needed to persist on the webapp.</p>
         </div>
 
       </div>`,
