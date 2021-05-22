@@ -119,8 +119,7 @@ const dynamicContent = {
             <img src="img/project/post-it.png" alt="project">
           </a>
           <h2 class="text-secondary">Post-It: Mini Node.js/Express.js API Project</h2>
-          <p>This was a project was built using Express.js and Node.js. It was a project to get a good foundation of buidling
-            an API and understanding how the back-end works. The front end code used was jQuery.</p>
+          <p>This was a project was built using Express.js and Node.js. It was a project that I built to get a good foundation on how to build a simple API, how the API connects with a database and how the back-end works. I learned how the front end connects with the back-end using the jQuery library.</p>
         </div>
 
         <div class="item">
@@ -128,7 +127,7 @@ const dynamicContent = {
             <img src="img/project/financial-calculator.png" alt="project">
           </a>
           <h2 class="text-secondary">Financial Calculator: Javascript Mini-Project</h2>
-          <p>This project was built utilizing just javascript. My friend was using an excel spreadsheet to have this done, so I thought it would be a good idea to use this opportunity to build a simple app with plain javascript.</p>
+          <p>This project was built utilizing just vanilla Javascript. My friend was using an excel spreadsheet to have this done, so I thought it would be a good idea to use this opportunity to build a simple app with vanilla Javascript to see how much I understood how to manipulate the DOM in the browser.</p>
         </div>
 
         <div class="item">
@@ -136,8 +135,7 @@ const dynamicContent = {
             <img src="img/project/simple-counter.png" alt="project">
           </a>
           <h2 class="text-secondary">Simple Counter: React Mini-Project</h2>
-          <p>This project was built utilizing just React alone. It was a project to get started on learning how to utilize
-            states to change the DOM.</p>
+          <p>This project was built utilizing just React alone. It was a project to help me get started on learning how to use React to change the DOM using state, components, and how the flow of data flows to diffent sections.</p>
         </div>
 
         <div class="item">
@@ -145,7 +143,7 @@ const dynamicContent = {
             <img src="img/project/to-do.png" alt="project">
           </a>
           <h2 class="text-secondary">To-do List: React Mini-Project</h2>
-          <p>This project was built using React alone. This project was made to get a better understand on using a parent component to pass state and functions via props.</p>
+          <p>This project was built using React. This project helped me get a better understanding on the structual hierarchy of components, how to pass state and functions, how to manage state, and how to use props as well as a foundation on best practices.</p>
         </div>
 
         <div class="item">
@@ -153,7 +151,7 @@ const dynamicContent = {
             <img src="img/project/yelp-camp.png" alt="project">
           </a>
           <h2 class="text-secondary">Yelp Camp: Full Express.js/Node.js Project</h2>
-          <p>This project was built following a tutorial using Express.js, Node.js and passport.js for authentication. This app helped build a solid understanding on how the front-end and back-end communicates and all the moving parts involved with routing.</p>
+          <p>This project was built following a tutorial using Express.js, Node.js and passport.js for authentication. This app helped me build a solid understanding on how the front-end and back-end communicates and all the moving parts involved with communicating to an API and also how to build a robust API.</p>
         </div>
 
         <div class="item">
@@ -161,7 +159,7 @@ const dynamicContent = {
             <img src="img/project/auth.png" alt="project">
           </a>
           <h2 class="text-secondary">Auth Connector: Full Stack Mini App with MERN</h2>
-          <p>This project was built using the MERN stack, and helped build a solid foundation for authentication and connecting the back-end with a front end framework. This project also helped template the authentication process to be used in future apps.</p>
+          <p>This project was built using the MERN stack, and for state management Redux. It was a custom project from start to finish. It really tested me on my front-end skills with React/Redux, and my back-end skills with NODE.JS/MongoDB. I learned alot about the complexities of authentication and the other features in authentication beyond just signing in and out.
         </div>
 
         <div class="item">
@@ -169,7 +167,7 @@ const dynamicContent = {
             <img src="img/project/project-management.png" alt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
-          <p>This project was built using the MERN stack. I used my previous project auth connector for authentication and built an API to support the data needed to persist on the webapp.</p>
+          <p>I also built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template. I also built a full robust custom API to handle the data for this project. This projeßct really pushed me to the limits. I learned alot from this project, especially the complexities of all the pieces required for a full robust application. I also learned alot about React life cycles and how important they are in managing state</p>ß
         </div>
 
       </div>`,
