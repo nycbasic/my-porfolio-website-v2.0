@@ -167,7 +167,7 @@ const dynamicContent = {
             <img src="img/project/project-management.png" ßßalt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
-          <p>I also built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template. I also built a full robust custom API to handle the data for this project. This projeßct really pushed me to the limits. I learned alot from this project, especially the complexities of all the pieces required for a full robust application. I also learned alot about React life cycles and how important they are in managing state</p>ß
+          <p>I also built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template. I also built a full robust custom API to handle the data for this project. This projeßct really pushed me to the limits. I learned alot from this project, especially the complexities of all the pieces required for a full robust application. I also learned alot about React life cycles and how important they are in managing state</p>
         </div>
 
       </div>`,
