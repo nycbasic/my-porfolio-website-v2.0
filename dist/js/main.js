@@ -90,9 +90,9 @@ const dynamicContent = {
         About <span class="text-secondary">Me</span>
       </h1> 
       <div class="about-info">
-        <div class="bio-image"></div>
+        <div class="bio-image"></div>ßßßß
           <div class="bio">
-            <h1 class="text-secondary">So, what's my story?</h1>
+            <h1 class="text-secondary">So, what's my story?</h1>ß
             <p>I currently work as a eLearning & web developer for mid-size financial tech company and aspiring to make a career switch to sofware engineering.</p>
             <p>In my current role, I was lucky enough to incorporate my love for coding and provide a value add to my team and the company. I was able to create, build and manage a web application from start to finish. I helped improve the user experience for the company's e-learning environment, while updating and creating new features along the way using the front-end library React.</p> 
             
