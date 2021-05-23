@@ -163,7 +163,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="" target="_blank">ß
+          <a href="" target="_blank">
             <img src="img/project/project-management.png" ßßalt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
