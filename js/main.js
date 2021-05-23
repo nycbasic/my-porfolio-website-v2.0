@@ -90,16 +90,16 @@ const dynamicContent = {
         About <span class="text-secondary">Me</span>
       </h1> 
       <div class="about-info">
-        <div class="bio-image"></div>ßßßß
+        <div class="bio-image"></div>
           <div class="bio">
-            <h1 class="text-secondary">So, what's my story?</h1>ß
+            <h1 class="text-secondary">So, what's my story?</h1>
             <p>I currently work as a eLearning & web developer for mid-size financial tech company and aspiring to make a career switch to sofware engineering.</p>
             <p>In my current role, I was lucky enough to incorporate my love for coding and provide a value add to my team and the company. I was able to create, build and manage a web application from start to finish. I helped improve the user experience for the company's e-learning environment, while updating and creating new features along the way using the front-end library React.</p> 
             
             <p>I'm also working on a project with a non-profit organization to help create a social network that allows them to manage their tournament registstration process, tournament results, and scoring using React/Redux, Node.js, Redis and SQL for the database.</p>
             
-            <p>I'm very passionate helping businesses solve problems and creating innovative product solutions with tech. I'm looking for an opportunity to immerse myself in the field of software engineering. </p>
-           
+            <p>I'm very passionate helping businesses solve problems and create innovative product solutions with tech. I'm looking for an opportunity to immerse myself in the field of software engineering. </p>
+            <p>To see what I worked or currently working on please visit my <a href="#portfolio">"Portfolio"</a> section.</p>
         </div>
       </div>`,
   },
@@ -167,7 +167,7 @@ const dynamicContent = {
             <img src="img/project/project-management.png" ßßalt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
-          <p>I also built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template. I also built a full robust custom API to handle the data for this project. This projeßct really pushed me to the limits. I learned alot from this project, especially the complexities of all the pieces required for a full robust application. I also learned alot about React life cycles and how important they are in managing state</p>
+          <p>I also built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template. I also built a full robust custom API to handle the data for this project. This project really pushed me to the limits. I learned alot from this project, especially the complexities of all the pieces required for a full robust application. I also learned alot about React life-cycles and how important they are in managing state.</p>
         </div>
 
       </div>`,
@@ -236,24 +236,3 @@ const toggleMenu = {
     }
   },
 };
-
-//<h4>My current stack:</h4>
-// <ul>
-//   <li>Front End:
-//     <ul>
-//       <li>HTML/CSS</li>
-//       <li>jQuery</li>
-//       <li>React/Redux</li>
-//     </ul>
-//   </li>
-//   <li>Back-End:
-//     <ul>
-//       <li>Node.js</li>
-//       <li>Express.js</li>
-//     </ul>
-//   </li>
-//   <li>Databases:</li>
-//   <ul>
-//     <li>MongoDB</li>
-//   </ul>
-// </ul>
