@@ -1,74 +1,74 @@
 // select DOM items
-const menuButton = document.querySelector(".menu-btn"),
-  menu = document.querySelector(".menu"),
-  menuNav = document.querySelector(".menu-nav"),
-  menuBranding = document.querySelector(".menu-branding"),
-  navItems = document.querySelectorAll(".nav-item"),
-  navLink = document.querySelectorAll(".nav-link"),
-  body = document.getElementById("bg-img"),
-  main = document.querySelector(".main");
+const menuButton = document.querySelector('.menu-btn'),
+	menu = document.querySelector('.menu'),
+	menuNav = document.querySelector('.menu-nav'),
+	menuBranding = document.querySelector('.menu-branding'),
+	navItems = document.querySelectorAll('.nav-item'),
+	navLink = document.querySelectorAll('.nav-link'),
+	body = document.getElementById('bg-img'),
+	main = document.querySelector('.main');
 
 // functions
 function browserBehavior(value, callback) {
-  if (value === undefined) {
-    dynamicContent.change("home", callback);
-  } else {
-    dynamicContent.change(value, callback);
-  }
+	if (value === undefined) {
+		dynamicContent.change('home', callback);
+	} else {
+		dynamicContent.change(value, callback);
+	}
 }
 
 // Checking IE Version and browser
 function getIEVersion() {
-  const sAgent = window.navigator.userAgent;
-  const Idx = sAgent.indexOf("MSIE");
+	const sAgent = window.navigator.userAgent;
+	const Idx = sAgent.indexOf('MSIE');
 
-  // If IE, return version number.
-  if (Idx > 0) {
-    return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf(".", Idx)));
-  }
-  // If IE 11 then look for Updated user agent string.
-  else if (!!navigator.userAgent.match(/Trident\/7\./)) {
-    return 11;
-  } else {
-    return false; //It is not IE
-  }
+	// If IE, return version number.
+	if (Idx > 0) {
+		return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf('.', Idx)));
+	}
+	// If IE 11 then look for Updated user agent string.
+	else if (!!navigator.userAgent.match(/Trident\/7\./)) {
+		return 11;
+	} else {
+		return false; //It is not IE
+	}
 }
 
 // Browser behavior
 window.onload = function () {
-  let hash = location.hash.split("#")[1];
-  if (getIEVersion() > 0) {
-    body.innerHTML =
-      '<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
-  } else {
-    browserBehavior(hash, () => false);
+	let hash = location.hash.split('#')[1];
+	if (getIEVersion() > 0) {
+		body.innerHTML =
+			'<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
+	} else {
+		browserBehavior(hash, () => false);
 
-    window.onpopstate = function () {
-      let hash = location.hash.split("#")[1];
-      browserBehavior(hash, () => false);
-    };
+		window.onpopstate = function () {
+			let hash = location.hash.split('#')[1];
+			browserBehavior(hash, () => false);
+		};
 
-    // Set initial state of menu
-    menuButton.addEventListener("click", () => toggleMenu.change());
+		// Set initial state of menu
+		menuButton.addEventListener('click', () => toggleMenu.change());
 
-    // Menu click action
-    navLink.forEach((val) => {
-      val.onclick = () => {
-        navLink.forEach((val) => {
-          val.parentElement.className = "nav-item show";
-        });
-        val.parentElement.className = "nav-item show current";
-        dynamicContent.change(val.id, toggleMenu.change());
-      };
-    });
-  }
+		// Menu click action
+		navLink.forEach((val) => {
+			val.onclick = () => {
+				navLink.forEach((val) => {
+					val.parentElement.className = 'nav-item show';
+				});
+				val.parentElement.className = 'nav-item show current';
+				dynamicContent.change(val.id, toggleMenu.change());
+			};
+		});
+	}
 };
 
 // Dynamic Content Object
 const dynamicContent = {
-  home: {
-    content_id: "home",
-    html: `<h1 class="lg-heading">
+	home: {
+		content_id: 'home',
+		html: `<h1 class="lg-heading">
         Sam
         <span class="text-secondary">Poon</span>
         </h1>
@@ -83,10 +83,10 @@ const dynamicContent = {
             <i class="fab fa-github fa-2x"></i>
           </a>
         </div>`,
-  },
-  about: {
-    content_id: "about",
-    html: `<h1 class="lg-heading">
+	},
+	about: {
+		content_id: 'about',
+		html: `<h1 class="lg-heading">
         About <span class="text-secondary">Me</span>
       </h1> 
       <div class="about-info">
@@ -102,11 +102,11 @@ const dynamicContent = {
             <p>To see what I worked or currently working on please visit my <a href="#portfolio">"Portfolio"</a> section.</p>
         </div>
       </div>`,
-  },
+	},
 
-  portfolio: {
-    content_id: "portfolio",
-    html: `<h1 class="lg-heading">
+	portfolio: {
+		content_id: 'portfolio',
+		html: `<h1 class="lg-heading">
         My <span class="text-secondary">Portfolio</span>
       </h1>
       <h2 class="sm-heading">
@@ -123,7 +123,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://secret-cove-36133.herokuapp.com/index.html" target="_blank">
+          <a href="https://nycbasic.github.io/financial-calculator/" target="_blank">
             <img src="img/project/financial-calculator.png" alt="project">
           </a>
           <h2 class="text-secondary">Financial Calculator: Javascript Mini-Project</h2>
@@ -131,7 +131,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://vast-reaches-98077.herokuapp.com/" target="_blank">
+          <a href="https://nycbasic.github.io/simple-react-counter-app/" target="_blank">
             <img src="img/project/simple-counter.png" alt="project">
           </a>
           <h2 class="text-secondary">Simple Counter: React Mini-Project</h2>
@@ -155,7 +155,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">
+          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">n
             <img src="img/project/auth.png" alt="project">
           </a>
           <h2 class="text-secondary">Auth Connector: Full Stack Mini App with MERN</h2>
@@ -164,18 +164,18 @@ const dynamicContent = {
 
         <div class="item">
           <a href="" target="_blank">
-            <img src="img/project/project-management.png" ßßalt="project">
+            <img src="img/project/project-management.png" alt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
           <p>I also built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template. I also built a full robust custom API to handle the data for this project. This project really pushed me to the limits. I learned alot from this project, especially the complexities of all the pieces required for a full robust application. I also learned alot about React life-cycles and how important they are in managing state.</p>
         </div>
 
       </div>`,
-  },
+	},
 
-  contact: {
-    content_id: "contact",
-    html: `<h1 class="lg-heading">
+	contact: {
+		content_id: 'contact',
+		html: `<h1 class="lg-heading">
         Contact <span class="text-secondary">Me</span>
       </h1>
       <h2 class="sm-heading">
@@ -189,50 +189,50 @@ const dynamicContent = {
           <a href="mailto:samuel.poon@baruchmail.cuny.edu?subject=Nice to meet you!">samuel.poon@baruchmail.cuny.edu</a>
         </div>
       </div>`,
-  },
+	},
 
-  change: function (value, callback) {
-    const { content_id, html } = this[value];
-    if (value === "home") {
-      body.setAttribute("id", "bg-img");
-      main.setAttribute("id", content_id);
-      main.innerHTML = html;
-      callback;
-    } else {
-      body.removeAttribute("id");
-      main.setAttribute("id", content_id);
-      main.innerHTML = html;
-      callback;
-    }
-  },
+	change: function (value, callback) {
+		const { content_id, html } = this[value];
+		if (value === 'home') {
+			body.setAttribute('id', 'bg-img');
+			main.setAttribute('id', content_id);
+			main.innerHTML = html;
+			callback;
+		} else {
+			body.removeAttribute('id');
+			main.setAttribute('id', content_id);
+			main.innerHTML = html;
+			callback;
+		}
+	},
 };
 
 // Toggle Menu Object
 const toggleMenu = {
-  boolean: false,
-  change: function () {
-    if (!this.boolean) {
-      menuButton.classList.add("close");
-      menu.classList.add("show");
-      menuNav.classList.add("show");
-      menuBranding.classList.add("show");
-      setTimeout(() => {
-        navItems.forEach((item) => {
-          item.classList.add("show");
-        });
-      }, 450);
+	boolean: false,
+	change: function () {
+		if (!this.boolean) {
+			menuButton.classList.add('close');
+			menu.classList.add('show');
+			menuNav.classList.add('show');
+			menuBranding.classList.add('show');
+			setTimeout(() => {
+				navItems.forEach((item) => {
+					item.classList.add('show');
+				});
+			}, 450);
 
-      this.boolean = true;
-    } else {
-      setTimeout(() => {
-        menuButton.classList.remove("close");
-        menu.classList.remove("show");
-        menuNav.classList.remove("show");
-        menuBranding.classList.remove("show");
-        navItems.forEach((item) => item.classList.remove("show"));
+			this.boolean = true;
+		} else {
+			setTimeout(() => {
+				menuButton.classList.remove('close');
+				menu.classList.remove('show');
+				menuNav.classList.remove('show');
+				menuBranding.classList.remove('show');
+				navItems.forEach((item) => item.classList.remove('show'));
 
-        this.boolean = false;
-      }, 200);
-    }
-  },
+				this.boolean = false;
+			}, 200);
+		}
+	},
 };
