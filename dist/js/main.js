@@ -123,7 +123,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://secret-cove-36133.herokuapp.com/index.html" target="_blank">
+          <a href="https://nycbasic.github.io/financial-calculator/" target="_blank">
             <img src="img/project/financial-calculator.png" alt="project">
           </a>
           <h2 class="text-secondary">Financial Calculator: Javascript Mini-Project</h2>
@@ -131,7 +131,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://vast-reaches-98077.herokuapp.com/" target="_blank">
+          <a href="https://nycbasic.github.io/simple-react-counter-app/" target="_blank">
             <img src="img/project/simple-counter.png" alt="project">
           </a>
           <h2 class="text-secondary">Simple Counter: React Mini-Project</h2>
@@ -155,7 +155,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">
+          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">n
             <img src="img/project/auth.png" alt="project">
           </a>
           <h2 class="text-secondary">Auth Connector: Full Stack Mini App with MERN</h2>
@@ -164,7 +164,7 @@ const dynamicContent = {
 
         <div class="item">
           <a href="" target="_blank">
-            <img src="img/project/project-management.png" ßßalt="project">
+            <img src="img/project/project-management.png" alt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
           <p>I also built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template. I also built a full robust custom API to handle the data for this project. This project really pushed me to the limits. I learned alot from this project, especially the complexities of all the pieces required for a full robust application. I also learned alot about React life-cycles and how important they are in managing state.</p>
