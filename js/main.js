@@ -115,7 +115,7 @@ const dynamicContent = {
       <div class="projects">
 
         <div class="item">
-          <a href="https://obscure-cove-76455.herokuapp.com/" target="_blank">
+          <a href="https://post-it-mini.herokuapp.com/" target="_blank">
             <img src="img/project/post-it.png" alt="project">
           </a>
           <h2 class="text-secondary">Post-It: Mini Node.js/Express.js API Project</h2>
@@ -155,7 +155,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">n
+          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">
             <img src="img/project/auth.png" alt="project">
           </a>
           <h2 class="text-secondary">Auth Connector: Full Stack Mini App with MERN</h2>
@@ -163,7 +163,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="" target="_blank">
+          <a href="https://nycbasic.github.io/project-management-mini-app/#/" target="_blank">
             <img src="img/project/project-management.png" alt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
