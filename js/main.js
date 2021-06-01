@@ -98,7 +98,7 @@ const dynamicContent = {
             
             <p>I'm also working on a project with a non-profit organization to help create a social network that allows them to manage their tournament registstration process, tournament results, and scoring using React/Redux, Node.js, Redis and SQL for the database.</p>
             
-            <p>I'm very passionate helping businesses solve problems and create innovative product solutions with tech. I'm looking for an opportunity to immerse myself in the field of software engineering. </p>
+            <p>I'm very passionate about helping businesses solve problems and create innovative product solutions with tech. I'm looking for an opportunity to immerse myself in the field of software engineering. </p>
             <p>To see what I worked or currently working on please visit my <a href="#portfolio">"Portfolio"</a> section.</p>
         </div>
       </div>`,
