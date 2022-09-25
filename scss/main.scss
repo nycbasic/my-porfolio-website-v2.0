@@ -217,6 +217,7 @@ main {
   }
   .item {
     height: 50vh;
+    overflow-y: hidden;
     p {
       height: 6.5vh;
     }
