@@ -1,74 +1,74 @@
 // select DOM items
-const menuButton = document.querySelector('.menu-btn'),
-	menu = document.querySelector('.menu'),
-	menuNav = document.querySelector('.menu-nav'),
-	menuBranding = document.querySelector('.menu-branding'),
-	navItems = document.querySelectorAll('.nav-item'),
-	navLink = document.querySelectorAll('.nav-link'),
-	body = document.getElementById('bg-img'),
-	main = document.querySelector('.main');
+const menuButton = document.querySelector(".menu-btn"),
+  menu = document.querySelector(".menu"),
+  menuNav = document.querySelector(".menu-nav"),
+  menuBranding = document.querySelector(".menu-branding"),
+  navItems = document.querySelectorAll(".nav-item"),
+  navLink = document.querySelectorAll(".nav-link"),
+  body = document.getElementById("bg-img"),
+  main = document.querySelector(".main");
 
 // functions
 function browserBehavior(value, callback) {
-	if (value === undefined) {
-		dynamicContent.change('home', callback);
-	} else {
-		dynamicContent.change(value, callback);
-	}
+  if (value === undefined) {
+    dynamicContent.change("home", callback);
+  } else {
+    dynamicContent.change(value, callback);
+  }
 }
 
 // Checking IE Version and browser
 function getIEVersion() {
-	const sAgent = window.navigator.userAgent;
-	const Idx = sAgent.indexOf('MSIE');
+  const sAgent = window.navigator.userAgent;
+  const Idx = sAgent.indexOf("MSIE");
 
-	// If IE, return version number.
-	if (Idx > 0) {
-		return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf('.', Idx)));
-	}
-	// If IE 11 then look for Updated user agent string.
-	else if (!!navigator.userAgent.match(/Trident\/7\./)) {
-		return 11;
-	} else {
-		return false; //It is not IE
-	}
+  // If IE, return version number.
+  if (Idx > 0) {
+    return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf(".", Idx)));
+  }
+  // If IE 11 then look for Updated user agent string.
+  else if (!!navigator.userAgent.match(/Trident\/7\./)) {
+    return 11;
+  } else {
+    return false; //It is not IE
+  }
 }
 
 // Browser behavior
 window.onload = function () {
-	let hash = location.hash.split('#')[1];
-	if (getIEVersion() > 0) {
-		body.innerHTML =
-			'<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
-	} else {
-		browserBehavior(hash, () => false);
+  let hash = location.hash.split("#")[1];
+  if (getIEVersion() > 0) {
+    body.innerHTML =
+      '<div class="container"><p>Please use the latest version of Chrome/Opera/Firefox/Safari/Edge to view this website. This website no longer supports Internet Explorer.</p></div>';
+  } else {
+    browserBehavior(hash, () => false);
 
-		window.onpopstate = function () {
-			let hash = location.hash.split('#')[1];
-			browserBehavior(hash, () => false);
-		};
+    window.onpopstate = function () {
+      let hash = location.hash.split("#")[1];
+      browserBehavior(hash, () => false);
+    };
 
-		// Set initial state of menu
-		menuButton.addEventListener('click', () => toggleMenu.change());
+    // Set initial state of menu
+    menuButton.addEventListener("click", () => toggleMenu.change());
 
-		// Menu click action
-		navLink.forEach((val) => {
-			val.onclick = () => {
-				navLink.forEach((val) => {
-					val.parentElement.className = 'nav-item show';
-				});
-				val.parentElement.className = 'nav-item show current';
-				dynamicContent.change(val.id, toggleMenu.change());
-			};
-		});
-	}
+    // Menu click action
+    navLink.forEach((val) => {
+      val.onclick = () => {
+        navLink.forEach((val) => {
+          val.parentElement.className = "nav-item show";
+        });
+        val.parentElement.className = "nav-item show current";
+        dynamicContent.change(val.id, toggleMenu.change());
+      };
+    });
+  }
 };
 
 // Dynamic Content Object
 const dynamicContent = {
-	home: {
-		content_id: 'home',
-		html: `<h1 class="lg-heading">
+  home: {
+    content_id: "home",
+    html: `<h1 class="lg-heading">
         Sam
         <span class="text-secondary">Poon</span>
         </h1>
@@ -83,30 +83,31 @@ const dynamicContent = {
             <i class="fab fa-github fa-2x"></i>
           </a>
         </div>`,
-	},
-	about: {
-		content_id: 'about',
-		html: `<h1 class="lg-heading">
+  },
+  about: {
+    content_id: "about",
+    html: `<h1 class="lg-heading">
         About <span class="text-secondary">Me</span>
       </h1> 
       <div class="about-info">
         <div class="bio-image"></div>
           <div class="bio">
             <h1 class="text-secondary">So, what's my story?</h1>
-            <p>I currently work as a eLearning & web developer for mid-size financial tech company and aspiring to make a career switch to sofware engineering.</p>
-            <p>In my current role, I was lucky enough to incorporate my love for coding and provide a value add to my team and the company. I was able to create, build and manage a web application from start to finish. I helped improve the user experience for the company's e-learning environment, while updating and creating new features along the way using the front-end library React.</p> 
+			<p>Full Stack Web Developer with experience 
+            <p>I previously worked in the Learning & Development space as a eLearning developer & web developer for a mid-size financial tech company.</p>
+            <p>In my previous role, I maintained and redesigned the company's eLearning web app. I gathered the requirements, and managed the development process from start to finish. I improved the user experience and learnig experience for the company's clients and internal staff. I also maintained and created new features. </p> 
             
-            <p>I'm also working on a project with a non-profit organization to help create a social network that allows them to manage their tournament registstration process, tournament results, and scoring using React/Redux, Node.js, Redis and SQL for the database.</p>
+            <p>I'm also working on a project with a non-profit organization to help create a social network that allows them to manage their tournament registstration process, tournament results, and scoring using React/Redux, Node, and MySQL.</p>
             
-            <p>I'm very passionate about helping businesses solve problems and create innovative product solutions with tech. I'm looking for an opportunity to immerse myself in the field of software engineering. </p>
+            <p>I'm very passionate helping businesses solve problems and create innovative product solutions with tech. I'm looking for an opportunity to immerse myself in the field of software engineering. </p>
             <p>To see what I worked or currently working on please visit my <a href="#portfolio">"Portfolio"</a> section.</p>
         </div>
       </div>`,
-	},
+  },
 
-	portfolio: {
-		content_id: 'portfolio',
-		html: `<h1 class="lg-heading">
+  portfolio: {
+    content_id: "portfolio",
+    html: `<h1 class="lg-heading">
         My <span class="text-secondary">Portfolio</span>
       </h1>
       <h2 class="sm-heading">
@@ -115,7 +116,7 @@ const dynamicContent = {
       <div class="projects">
 
         <div class="item">
-          <a href="https://post-it-mini.herokuapp.com/" target="_blank">
+          <a href="https://obscure-cove-76455.herokuapp.com/" target="_blank">
             <img src="img/project/post-it.png" alt="project">
           </a>
           <h2 class="text-secondary">Post-It: Mini Node.js/Express.js API Project</h2>
@@ -155,7 +156,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">
+          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">n
             <img src="img/project/auth.png" alt="project">
           </a>
           <h2 class="text-secondary">Auth Connector: Full Stack Mini App with MERN</h2>
@@ -163,7 +164,7 @@ const dynamicContent = {
         </div>
 
         <div class="item">
-          <a href="https://nycbasic.github.io/project-management-mini-app/#/" target="_blank">
+          <a href="" target="_blank">
             <img src="img/project/project-management.png" alt="project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
@@ -171,11 +172,11 @@ const dynamicContent = {
         </div>
 
       </div>`,
-	},
+  },
 
-	contact: {
-		content_id: 'contact',
-		html: `<h1 class="lg-heading">
+  contact: {
+    content_id: "contact",
+    html: `<h1 class="lg-heading">
         Contact <span class="text-secondary">Me</span>
       </h1>
       <h2 class="sm-heading">
@@ -189,50 +190,50 @@ const dynamicContent = {
           <a href="mailto:samuel.poon@baruchmail.cuny.edu?subject=Nice to meet you!">samuel.poon@baruchmail.cuny.edu</a>
         </div>
       </div>`,
-	},
+  },
 
-	change: function (value, callback) {
-		const { content_id, html } = this[value];
-		if (value === 'home') {
-			body.setAttribute('id', 'bg-img');
-			main.setAttribute('id', content_id);
-			main.innerHTML = html;
-			callback;
-		} else {
-			body.removeAttribute('id');
-			main.setAttribute('id', content_id);
-			main.innerHTML = html;
-			callback;
-		}
-	},
+  change: function (value, callback) {
+    const { content_id, html } = this[value];
+    if (value === "home") {
+      body.setAttribute("id", "bg-img");
+      main.setAttribute("id", content_id);
+      main.innerHTML = html;
+      callback;
+    } else {
+      body.removeAttribute("id");
+      main.setAttribute("id", content_id);
+      main.innerHTML = html;
+      callback;
+    }
+  },
 };
 
 // Toggle Menu Object
 const toggleMenu = {
-	boolean: false,
-	change: function () {
-		if (!this.boolean) {
-			menuButton.classList.add('close');
-			menu.classList.add('show');
-			menuNav.classList.add('show');
-			menuBranding.classList.add('show');
-			setTimeout(() => {
-				navItems.forEach((item) => {
-					item.classList.add('show');
-				});
-			}, 450);
+  boolean: false,
+  change: function () {
+    if (!this.boolean) {
+      menuButton.classList.add("close");
+      menu.classList.add("show");
+      menuNav.classList.add("show");
+      menuBranding.classList.add("show");
+      setTimeout(() => {
+        navItems.forEach((item) => {
+          item.classList.add("show");
+        });
+      }, 450);
 
-			this.boolean = true;
-		} else {
-			setTimeout(() => {
-				menuButton.classList.remove('close');
-				menu.classList.remove('show');
-				menuNav.classList.remove('show');
-				menuBranding.classList.remove('show');
-				navItems.forEach((item) => item.classList.remove('show'));
+      this.boolean = true;
+    } else {
+      setTimeout(() => {
+        menuButton.classList.remove("close");
+        menu.classList.remove("show");
+        menuNav.classList.remove("show");
+        menuBranding.classList.remove("show");
+        navItems.forEach((item) => item.classList.remove("show"));
 
-				this.boolean = false;
-			}, 200);
-		}
-	},
+        this.boolean = false;
+      }, 200);
+    }
+  },
 };
