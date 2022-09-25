@@ -89,20 +89,16 @@ const dynamicContent = {
     html: `<h1 class="lg-heading">
         About <span class="text-secondary">Me</span>
       </h1> 
-      <div class="about-info">
-        <div class="bio-image"></div>
-          <div class="bio">
-            <h1 class="text-secondary">So, what's my story?</h1>
-			<p>Full Stack Web Developer with experience 
-            <p>I previously worked in the Learning & Development space as a eLearning developer & web developer for a mid-size financial tech company.</p>
-            <p>In my previous role, I maintained and redesigned the company's eLearning web app. I gathered the requirements, and managed the development process from start to finish. I improved the user experience and learnig experience for the company's clients and internal staff. I also maintained and created new features. </p> 
+	  <div class="bio">
+        <h1 class="text-secondary">So, what's my story?</h1>
+        <p>I previously worked in the Learning & Development space as a eLearning developer & a web developer for a mid-size financial tech company.</p>
+        <p>In my previous role, I maintained and redesigned the company's eLearning web application. Improved the overall user experience and learning experience. Generated additional revenue with custom eLearning webpages company clients.</p> 
             
-            <p>I'm also working on a project with a non-profit organization to help create a social network that allows them to manage their tournament registstration process, tournament results, and scoring using React/Redux, Node, and MySQL.</p>
+        <p>Currently working on a project with a non-profit organization to help create a tournament registstration process with tournament results, and scoring using React/Redux, Node, and SQL.</p>
             
-            <p>I'm very passionate helping businesses solve problems and create innovative product solutions with tech. I'm looking for an opportunity to immerse myself in the field of software engineering. </p>
-            <p>To see what I worked or currently working on please visit my <a href="#portfolio">"Portfolio"</a> section.</p>
-        </div>
-      </div>`,
+        <p>I enjoy helping businesses solve problems with tech. Looking for an opportunity to continue to grow as a web developer/software engineering. </p>
+        <p>To see what I worked or currently working on please visit my <a href="#portfolio">"Portfolio"</a> section.</p>
+    </div>`,
   },
 
   portfolio: {
@@ -117,7 +113,7 @@ const dynamicContent = {
 
         <div class="item">
           <a href="https://obscure-cove-76455.herokuapp.com/" target="_blank">
-            <img src="img/project/post-it.png" alt="project">
+            <img src="img/project/post-it.png" alt="Post It Project">
           </a>
           <h2 class="text-secondary">Post-It: Mini Node.js/Express.js API Project</h2>
           <p>This was a project was built using Express.js and Node.js. It was a project that I built to get a good foundation on how to build a simple API, how the API connects with a database and how the back-end works. I learned how the front end connects with the back-end using the jQuery library.</p>
@@ -125,50 +121,58 @@ const dynamicContent = {
 
         <div class="item">
           <a href="https://nycbasic.github.io/financial-calculator/" target="_blank">
-            <img src="img/project/financial-calculator.png" alt="project">
+            <img src="img/project/financial-calculator.png" alt="Financial Calculator Project">
           </a>
           <h2 class="text-secondary">Financial Calculator: Javascript Mini-Project</h2>
           <p>This project was built utilizing just vanilla Javascript. My friend was using an excel spreadsheet to have this done, so I thought it would be a good idea to use this opportunity to build a simple app with vanilla Javascript to see how much I understood how to manipulate the DOM in the browser.</p>
         </div>
 
         <div class="item">
-          <a href="https://nycbasic.github.io/simple-react-counter-app/" target="_blank">
-            <img src="img/project/simple-counter.png" alt="project">
-          </a>
-          <h2 class="text-secondary">Simple Counter: React Mini-Project</h2>
-          <p>This project was built utilizing just React alone. It was a project to help me get started on learning how to use React to change the DOM using state, components, and how the flow of data flows to diffent sections.</p>
-        </div>
-
-        <div class="item">
           <a href="https://nycbasic.github.io/react-todo-app/" target="_blank">
-            <img src="img/project/to-do.png" alt="project">
+            <img src="img/project/to-do.png" alt="React To Do List Project">
           </a>
           <h2 class="text-secondary">To-do List: React Mini-Project</h2>
           <p>This project was built using React. This project helped me get a better understanding on the structual hierarchy of components, how to pass state and functions, how to manage state, and how to use props as well as a foundation on best practices.</p>
         </div>
 
         <div class="item">
-          <a href="https://boiling-plains-18857.herokuapp.com/" target="_blank">
-            <img src="img/project/yelp-camp.png" alt="project">
-          </a>
-          <h2 class="text-secondary">Yelp Camp: Full Express.js/Node.js Project</h2>
-          <p>This project was built following a tutorial using Express.js, Node.js and passport.js for authentication. This app helped me build a solid understanding on how the front-end and back-end communicates and all the moving parts involved with communicating to an API and also how to build a robust API.</p>
-        </div>
-
-        <div class="item">
-          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">n
-            <img src="img/project/auth.png" alt="project">
+          <a href="https://nycbasic.github.io/mini-auth/" target="_blank">
+            <img src="img/project/auth.png" alt="Mini User Authentication Project">
           </a>
           <h2 class="text-secondary">Auth Connector: Full Stack Mini App with MERN</h2>
-          <p>This project was built using the MERN stack, and for state management Redux. It was a custom project from start to finish. It really tested me on my front-end skills with React/Redux, and my back-end skills with NODE.JS/MongoDB. I learned alot about the complexities of authentication and the other features in authentication beyond just signing in and out.
+          <p>This project was built using the MERN stack, and for state management Redux. A full custom user authentication project.
         </div>
 
         <div class="item">
-          <a href="" target="_blank">
-            <img src="img/project/project-management.png" alt="project">
+          <a href="https://nycbasic.github.io/project-management-mini-app/" target="_blank">
+            <img src="img/project/project-management.png" alt="Project Management Tool Project">
           </a>
           <h2 class="text-secondary">Full Stack Application - Mini Project Management</h2>
-          <p>I also built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template. I also built a full robust custom API to handle the data for this project. This project really pushed me to the limits. I learned alot from this project, especially the complexities of all the pieces required for a full robust application. I also learned alot about React life-cycles and how important they are in managing state.</p>
+          <p>Built this project using the MERN stack, and managing state with Redux. It's a full stack application with full authentication using Auth Connector as the template with a full robust custom API to handle the data for this project.</p>
+        </div>
+
+		<div class="item">
+          <a href="https://ilearn.intralinks.com" target="_blank">
+            <img src="img/project/ilearn.png" alt="project">
+          </a>
+          <h2 class="text-secondary">Intralinks eLearning Web Application</h2>
+          <p>This is the web application I created for the company I previously worked for. I upgraded the website from a basic web application to a SPA and recreated the user experience. The site is also mobile friendly.</p>
+        </div>
+
+		<div class="item">
+          <a href="https://ilearn.intralinks.com/archives" target="_blank">
+            <img src="img/project/faq.png" alt="project">
+          </a>
+          <h2 class="text-secondary">Intralinks FAQ Webpage</h2>
+          <p>This was a company project that required a simple FAQ site, where the clients are able to get the information they need. The site is also mobile friendly.</p>
+        </div>
+
+		<div class="item">
+          <a href="https://ilearn.intralinks.com/frs" target="_blank">
+            <img src="img/project/frs.png" alt="project">
+          </a>
+          <h2 class="text-secondary">Intralinks FAQ Webpage</h2>
+          <p>This was a company project to generate additional revenue by creating a custom eLearning webpage for the Federal Reserve Bank. I created the same eLearning webpage for Bank of America as well. The site is also mobile friendly.</p>
         </div>
 
       </div>`,
