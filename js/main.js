@@ -92,7 +92,7 @@ const dynamicContent = {
 	  <div class="bio">
         <h1 class="text-secondary">So, what's my story?</h1>
         <p>I previously worked in the Learning & Development space as a eLearning developer & a web developer for a mid-size financial tech company.</p>
-        <p>In my previous role, I maintained and redesigned the company's eLearning web application. Improved the overall user experience and learning experience. Generated additional revenue with custom eLearning webpages company clients.</p> 
+        <p>In my previous role, I maintained and redesigned the company's eLearning web application. Improved the overall user experience and learning experience. Generated additional revenue with custom eLearning webpages for company clients.</p> 
             
         <p>Currently working on a project with a non-profit organization to help create a tournament registstration process with tournament results, and scoring using React/Redux, Node, and SQL.</p>
             
