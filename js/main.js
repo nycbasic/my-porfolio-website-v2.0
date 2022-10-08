@@ -171,7 +171,7 @@ const dynamicContent = {
           <a href="https://ilearn.intralinks.com/frs" target="_blank">
             <img src="img/project/frs.png" alt="project">
           </a>
-          <h2 class="text-secondary">Intralinks FAQ Webpage</h2>
+          <h2 class="text-secondary">Intralinks Custom eLearning Web Page</h2>
           <p>This was a company project to generate additional revenue by creating a custom eLearning webpage for the Federal Reserve Bank. I created the same eLearning webpage for Bank of America as well. The site is also mobile friendly.</p>
         </div>
 
