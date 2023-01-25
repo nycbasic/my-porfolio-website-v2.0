@@ -112,7 +112,7 @@ const dynamicContent = {
       <div class="projects">
 
         <div class="item">
-          <a href="https://obscure-cove-76455.herokuapp.com/" target="_blank">
+          <a href="https://post-it-mini-app.onrender.com/" target="_blank">
             <img src="img/project/post-it.png" alt="Post It Project">
           </a>
           <h2 class="text-secondary">Post-It: Mini Node.js/Express.js API Project</h2>
